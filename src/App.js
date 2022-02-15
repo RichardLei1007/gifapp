@@ -22,23 +22,19 @@ function App() {
       <div className="searchbar">
         {/*  "outlined" variant prop gives the nice animation */}
         <TextField
-          id="search"
-          label="Search"
-          variant="outlined"
-          onChange={(e) => setText(e.target.value)}
-          value={text}
-          onKeyPress={(e) => {
-            if (e.key === "Enter") search();
-          }}
+          id = "search"
+          label = "Search"
+          variant = "outlined"
+          onChange = {(e) => setText(e.target.value)}
+          value = {text}
+          onKeyPress ={(e) => {if (e.key === "Enter") search();}}
         />
         <Button variant="outlined" onClick={search} size="large">
           Search
         </Button>
       </div>
       <div className = "gifs">
-        {gifs.map((gif, i) => {
-          return <img key = {i} src = {gif.images.fixed_height.url}/>;
-          })}
+        {gifs.map((gif, i) => {return <img key = {i} src = {gif.images.fixed_height.url}/>;})}
       </div>
     </div>
   );
